@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,7 @@ Route::view('/pagos/registro', '/pagos/formulario-crear');
 Route::view('/pagos/listado', '/pagos/listado');
 //administradores
 Route::view('/admins/registro', '/administradores/formulario-crear');
-Route::view('/admins/listado', '/administradores/listado');
+//Route::view('/admins/listado', '/administradores/listado');
+
+Route::get('/usuarios/listado' , [UsuarioController::class,'index']);
 
