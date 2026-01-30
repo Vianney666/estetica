@@ -7,12 +7,10 @@ use App\Models\Servicios;
 
 class ServiciosController extends Controller
 {
-    //
-    public function index() {
-        //
+    public function index() 
+    {
         $servicios = Servicios::all();
         return view('servicios.listado', compact('servicios'));
-        //return $servicios;
     }
 
     public function create()
@@ -22,7 +20,6 @@ class ServiciosController extends Controller
 
     public function store(Request $req)
     {
-        //return $req->all();
         $servicio = new Servicios();
 
         $servicio->nombre_servicio = $req->nombre_servicio;

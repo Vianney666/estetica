@@ -29,8 +29,8 @@ Route::view('/clientes/listado', '/clientes/listado');
 //Route::view('/sucursales/registro', '/sucursales/formulario-crear');
 //Route::view('/sucursales/listado', '/sucursales/listado');
 //servicios
-Route::view('/servicios/registro', '/servicios/formulario-crear');
-Route::view('/servicios/listado', '/servicios/listado');
+//Route::view('/servicios/registro', '/servicios/formulario-crear');
+//Route::view('/servicios/listado', '/servicios/listado');
 //citas
 Route::view('/citas/registro', '/citas/formulario-crear');
 Route::view('/citas/listado', '/citas/listado');
@@ -57,8 +57,7 @@ Route::get('/servicios/listado', [ServiciosController::class, 'index']);
 Route::get('/servicios/registro', [ServiciosController::class, 'create']);
 Route::post('/servicios/store', [ServiciosController::class, 'store']);
 
-Route::get('/servicios/create', [ServiciosController::class, 'create'])->name('servicios.create');
-Route::post('/servicios', [ServiciosController::class, 'store'])->name('servicios.store');
+//Route::get('/servicios/create', [ServiciosController::class, 'create'])->name('servicios.create');
 Route::get('/servicios/{servicio}/edit', [ServiciosController::class, 'edit'])->name('servicios.edit');
 Route::put('/servicios/{servicio}', [ServiciosController::class, 'update'])->name('servicios.update');
 Route::get('/servicios/{servicio}', [ServiciosController::class, 'show'])->name('servicios.show');

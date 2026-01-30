@@ -10,7 +10,6 @@ class SucursalesController extends Controller
     public function index()
     {
         $sucursales = Sucursales::all();
-        //return $sucursales;
         return view('sucursales.listado', compact('sucursales'));
     }
 
@@ -21,7 +20,6 @@ class SucursalesController extends Controller
 
     public function store(Request $req)
     {
-        //return $req->all();
         $sucursal = new Sucursales();
 
         $sucursal->direccion = $req->direccion;
