@@ -2,268 +2,616 @@
 
 @section('titulo', 'mostrar servicios')
 
-@section('contenido')
-
-<style>
-        .nav-for-slider .swiper-slide {
-            height: auto;
-            width: auto;
-            cursor: pointer;
-           
-        }
-        .swiper-wrapper{
-            height: auto;
-        }
-        .nav-for-slider .swiper-slide img{
-            border:2px solid transparent;
-            border-radius: 10px;
-           
-        }
-        .nav-for-slider .swiper-slide-thumb-active img{
-           
-            border-color: rgb(79 70 229 );
-        }
-    </style>  
- <section class="py-24">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2">
-                <div class="slider-box w-full h-full max-lg:mx-auto mx-0">
-                    <div class="swiper main-slide-carousel swiper-container relative mb-6">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="block">
-                                    <img src="https://pagedone.io/asset/uploads/1700472379.png"
-                                        alt="Summer Travel Bag image" class="max-lg:mx-auto rounded-2xl object-cover">
-                                </div>
+<!-- Start block -->
+<section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 antialiased mt-15">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <!-- Start coding here -->
+        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                <div class="w-full md:w-1/2">
+                    <form class="flex items-center">
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="block">
-                                    <img src="https://pagedone.io/asset/uploads/1711622397.png"
-                                        alt="Summer Travel Bag image" class="max-lg:mx-auto rounded-2xl object-cover">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="block">
-                                    <img src="https://pagedone.io/asset/uploads/1711622408.png"
-                                        alt="Summer Travel Bag image" class="max-lg:mx-auto rounded-2xl object-cover">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="block">
-                                    <img src="https://pagedone.io/asset/uploads/1711622419.png"
-                                        alt="Summer Travel Bag image" class="max-lg:mx-auto rounded-2xl object-cover">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="block">
-                                    <img src="https://pagedone.io/asset/uploads/1711622437.png"
-                                        alt="Summer Travel Bag image" class="max-lg:mx-auto rounded-2xl object-cover">
-                                </div>
-                            </div>
+                            <input type="text" id="simple-search"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Search" required="">
                         </div>
-                    </div>
-                    <div class="nav-for-slider ">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide thumbs-slide">
-                                <img src="https://pagedone.io/asset/uploads/1700472379.png"
-                                    alt="Summer Travel Bag image"
-                                    class="cursor-pointer rounded-xl transition-all duration-500 object-cover">
-                            </div>
-                            <div class="swiper-slide thumbs-slide">
-                                <img src="https://pagedone.io/asset/uploads/1700472430.png"
-                                    alt="Summer Travel Bag image"
-                                    class="cursor-pointer rounded-xl transition-all duration-500 border hover:border-indigo-600 object-cover">
-                            </div>
-                            <div class="swiper-slide thumbs-slide">
-                                <img src="https://pagedone.io/asset/uploads/1700472416.png"
-                                    alt="Summer Travel Bag image"
-                                    class="cursor-pointer rounded-xl transition-all duration-500 border hover:border-indigo-600 object-cover">
-                            </div>
-                            <div class="swiper-slide thumbs-slide">
-                                <img src="https://pagedone.io/asset/uploads/1700472446.png"
-                                    alt="Summer Travel Bag image"
-                                    class="cursor-pointer rounded-xl transition-all duration-500 border hover:border-indigo-600 object-cover">
-                            </div>
-                            <div class="swiper-slide thumbs-slide">
-                                <img src="https://pagedone.io/asset/uploads/1700472467.png"
-                                    alt="Summer Travel Bag image"
-                                    class="cursor-pointer rounded-xl transition-all duration-500 border hover:border-indigo-600 object-cover">
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                <div class="flex justify-center items-center">
-                    <div class="pro-detail w-full max-lg:max-w-[608px] lg:pl-8 xl:pl-16 max-lg:mx-auto max-lg:mt-8">
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="text">
-                                <h2 class="font-manrope font-bold text-3xl leading-10 text-gray-900 mb-2">Yellow Summer
-                                    Travel
-                                    Bag
-                                </h2>
-                                <p class="font-normal text-base text-gray-500">ABS LUGGAGE</p>
-                            </div>
-                            <button class="group transition-all duration-500 p-0.5">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle
-                                        class="fill-indigo-50 transition-all duration-500 group-hover:fill-indigo-100"
-                                        cx="30" cy="30" r="30" fill="" />
-                                    <path
-                                        class="stroke-indigo-600 transition-all duration-500 group-hover:stroke-indigo-700"
-                                        d="M21.4709 31.3196L30.0282 39.7501L38.96 30.9506M30.0035 22.0789C32.4787 19.6404 36.5008 19.6404 38.976 22.0789C41.4512 24.5254 41.4512 28.4799 38.9842 30.9265M29.9956 22.0789C27.5205 19.6404 23.4983 19.6404 21.0231 22.0789C18.548 24.5174 18.548 28.4799 21.0231 30.9184M21.0231 30.9184L21.0441 30.939M21.0231 30.9184L21.4628 31.3115"
-                                        stroke="" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div class="flex flex-col min-[400px]:flex-row min-[400px]:items-center mb-8 gap-y-3">
-                            <div class="flex items-center">
-                                <h5 class="font-manrope font-semibold text-2xl leading-9 text-gray-900 ">$ 199.00 </h5>
-                                <span class="ml-3 font-semibold text-lg text-indigo-600">30% off</span>
-                            </div>
-                            <svg class="mx-5 max-[400px]:hidden" xmlns="http://www.w3.org/2000/svg" width="2"
-                                height="36" viewBox="0 0 2 36" fill="none">
-                                <path d="M1 0V36" stroke="#E5E7EB" />
+                <div
+                    class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                    <button type="button" id="createProductModalButton" data-modal-target="createProductModal"
+                        data-modal-toggle="createProductModal"
+                        class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                        </svg>
+                        Registrar servicio
+                    </button>
+                    <div class="flex items-center space-x-3 w-full md:w-auto">
+                        <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown"
+                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                            type="button">
+                            <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                             </svg>
-                            <button class="flex items-center gap-1 rounded-lg bg-amber-400 py-1.5 px-2.5 w-max">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_12657_16865)">
-                                        <path
-                                            d="M8.10326 2.26718C8.47008 1.52393 9.52992 1.52394 9.89674 2.26718L11.4124 5.33818C11.558 5.63332 11.8396 5.83789 12.1653 5.88522L15.5543 6.37768C16.3746 6.49686 16.7021 7.50483 16.1086 8.08337L13.6562 10.4738C13.4205 10.7035 13.313 11.0345 13.3686 11.3589L13.9475 14.7343C14.0877 15.5512 13.2302 16.1742 12.4966 15.7885L9.46534 14.1948C9.17402 14.0417 8.82598 14.0417 8.53466 14.1948L5.5034 15.7885C4.76978 16.1742 3.91235 15.5512 4.05246 14.7343L4.63137 11.3589C4.68701 11.0345 4.57946 10.7035 4.34378 10.4738L1.89144 8.08337C1.29792 7.50483 1.62543 6.49686 2.44565 6.37768L5.8347 5.88522C6.16041 5.83789 6.44197 5.63332 6.58764 5.33818L8.10326 2.26718Z"
-                                            fill="white" />
-                                        <g clip-path="url(#clip1_12657_16865)">
-                                            <path
-                                                d="M8.10326 2.26718C8.47008 1.52393 9.52992 1.52394 9.89674 2.26718L11.4124 5.33818C11.558 5.63332 11.8396 5.83789 12.1653 5.88522L15.5543 6.37768C16.3746 6.49686 16.7021 7.50483 16.1086 8.08337L13.6562 10.4738C13.4205 10.7035 13.313 11.0345 13.3686 11.3589L13.9475 14.7343C14.0877 15.5512 13.2302 16.1742 12.4966 15.7885L9.46534 14.1948C9.17402 14.0417 8.82598 14.0417 8.53466 14.1948L5.5034 15.7885C4.76978 16.1742 3.91235 15.5512 4.05246 14.7343L4.63137 11.3589C4.68701 11.0345 4.57946 10.7035 4.34378 10.4738L1.89144 8.08337C1.29792 7.50483 1.62543 6.49686 2.44565 6.37768L5.8347 5.88522C6.16041 5.83789 6.44197 5.63332 6.58764 5.33818L8.10326 2.26718Z"
-                                                fill="white" />
-                                        </g>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_12657_16865">
-                                            <rect width="18" height="18" fill="white" />
-                                        </clipPath>
-                                        <clipPath id="clip1_12657_16865">
-                                            <rect width="18" height="18" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <span class="text-base font-medium text-white">4.8</span>
-                            </button>
-                        </div>
-                        <p class="font-medium text-lg text-gray-900 mb-2">Color</p>
-                        <div class="grid grid-cols-3 gap-3 mb-6 max-w-sm">
-                            <div class="color-box group">
-                                <div>
-                                    <img src="https://pagedone.io/asset/uploads/1700472379.png"
-                                        alt="Summer Travel Bag image"
-                                        class="min-[400px]:h-[100px] aspect-square border-2 border-gray-100 rounded-xl transition-all duration-500 group-hover:border-indigo-600 object-cover"
-                                        class="border border-gray-300 rounded-lg">
-                                    <p
-                                        class="font-normal text-sm leading-6 text-gray-400 text-center mt-2 group-hover:text-indigo-600 ">
-                                        Black</p>
-                                </div>
-                            </div>
-
-                            <div class="color-box group">
-                                <div>
-                                    <img src="https://pagedone.io/asset/uploads/1700472517.png"
-                                        alt="Summer Travel Bag image"
-                                        class="border-2 border-gray-100 rounded-xl transition-all duration-500 group-hover:border-indigo-600 object-cover"
-                                        class="border border-gray-300 rounded-lg">
-                                    <p
-                                        class="font-normal text-sm leading-6 text-gray-400 text-center mt-2 group-hover:text-indigo-600 ">
-                                        Brown</p>
-                                </div>
-                            </div>
-
-                            <div class="color-box group">
-                                <div>
-                                    <img src="https://pagedone.io/asset/uploads/1700472529.png"
-                                        alt="Summer Travel Bag image"
-                                        class="border-2 border-gray-100 rounded-xl transition-all duration-500 group-hover:border-indigo-600 object-cover"
-                                        class="border border-gray-300 rounded-lg">
-                                    <p
-                                        class="font-normal text-sm leading-6 text-gray-400 text-center mt-2 group-hover:text-indigo-600 ">
-                                        Beige</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="font-medium text-lg text-gray-900 mb-2">Size (KG)</p>
-                        <div class="grid grid-cols-2 min-[400px]:grid-cols-4 gap-3 mb-3 min-[400px]:mb-8">
-                            <button
-                                class="border border-gray-200 whitespace-nowrap text-gray-900 text-sm leading-6 py-2.5 rounded-full px-5 text-center w-full font-semibold shadow-sm shadow-transparent transition-all duration-300 hover:bg-gray-50 hover:shadow-gray-300">Full
-                                Set</button>
-                            <button
-                                class="border border-gray-200 whitespace-nowrap text-gray-900 text-sm leading-6 py-2.5 rounded-full px-5 text-center w-full font-semibold shadow-sm shadow-transparent transition-all duration-300 hover:bg-gray-50 hover:shadow-gray-300">
-                                10 kg</button>
-                            <button
-                                class="border border-gray-200 whitespace-nowrap text-gray-900 text-sm leading-6 py-2.5 rounded-full px-5 text-center w-full font-semibold shadow-sm shadow-transparent transition-all duration-300 hover:bg-gray-50 hover:shadow-gray-300">
-                                25 kg</button>
-                            <button
-                                class="border border-gray-200 whitespace-nowrap text-gray-900 text-sm leading-6 py-2.5 rounded-full px-5 text-center w-full font-semibold shadow-sm shadow-transparent transition-all duration-300 hover:bg-gray-50 hover:shadow-gray-300">
-                                35 kg</button>
-                        </div>
-                        <div class="flex items-center flex-col min-[400px]:flex-row gap-3 mb-3 min-[400px]:mb-8">
-                            <div class=" flex items-center justify-center border border-gray-400 rounded-full">
-                                <button
-                                    class="group py-[14px] px-3 w-full border-r border-gray-400 rounded-l-full h-full flex items-center justify-center bg-white shadow-sm shadow-transparent transition-all duration-300 hover:bg-gray-50 hover:shadow-gray-300">
-                                    <svg class="stroke-black group-hover:stroke-black" width="22" height="22"
-                                        viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.5 11H5.5" stroke="" stroke-width="1.6" stroke-linecap="round" />
-                                        <path d="M16.5 11H5.5" stroke="" stroke-opacity="0.2" stroke-width="1.6"
-                                            stroke-linecap="round" />
-                                        <path d="M16.5 11H5.5" stroke="" stroke-opacity="0.2" stroke-width="1.6"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <input type="text"
-                                    class="font-semibold text-gray-900 text-lg py-3 px-2 w-full min-[400px]:min-w-[75px] h-full bg-transparent placeholder:text-gray-900 text-center hover:text-indigo-600 outline-0 hover:placeholder:text-indigo-600"
-                                    placeholder="1">
-                                <button
-                                    class="group py-[14px] px-3 w-full border-l border-gray-400 rounded-r-full h-full flex items-center justify-center bg-white shadow-sm shadow-transparent transition-all duration-300 hover:bg-gray-50 hover:shadow-gray-300">
-                                    <svg class="stroke-black group-hover:stroke-black" width="22" height="22"
-                                        viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 5.5V16.5M16.5 11H5.5" stroke="#9CA3AF" stroke-width="1.6"
-                                            stroke-linecap="round" />
-                                        <path d="M11 5.5V16.5M16.5 11H5.5" stroke="black" stroke-opacity="0.2"
-                                            stroke-width="1.6" stroke-linecap="round" />
-                                        <path d="M11 5.5V16.5M16.5 11H5.5" stroke="black" stroke-opacity="0.2"
-                                            stroke-width="1.6" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <button
-                                class="group py-3 px-5 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-lg w-full flex items-center justify-center gap-2 shadow-sm shadow-transparent transition-all duration-500 hover:shadow-indigo-300 hover:bg-indigo-100">
-                                <svg class="stroke-indigo-600 transition-all duration-500 group-hover:stroke-indigo-600"
-                                    width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10.7394 17.875C10.7394 18.6344 10.1062 19.25 9.32511 19.25C8.54402 19.25 7.91083 18.6344 7.91083 17.875M16.3965 17.875C16.3965 18.6344 15.7633 19.25 14.9823 19.25C14.2012 19.25 13.568 18.6344 13.568 17.875M4.1394 5.5L5.46568 12.5908C5.73339 14.0221 5.86724 14.7377 6.37649 15.1605C6.88573 15.5833 7.61377 15.5833 9.06984 15.5833H15.2379C16.6941 15.5833 17.4222 15.5833 17.9314 15.1605C18.4407 14.7376 18.5745 14.0219 18.8421 12.5906L19.3564 9.84059C19.7324 7.82973 19.9203 6.8243 19.3705 6.16215C18.8207 5.5 17.7979 5.5 15.7522 5.5H4.1394ZM4.1394 5.5L3.66797 2.75"
-                                        stroke="" stroke-width="1.6" stroke-linecap="round" />
-                                </svg>
-                                Add to cart</button>
-                        </div>
-                        <button
-                            class="text-center w-full px-5 py-4 rounded-[100px] bg-indigo-600 flex items-center justify-center font-semibold text-lg text-white shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-300">
-                            Buy Now
+                            Actions
                         </button>
+                        <div id="actionsDropdown"
+                            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="actionsDropdownButton">
+                                <li>
+                                    <a href="#"
+                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mass
+                                        Edit</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="#"
+                                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete
+                                    all</a>
+                            </div>
+                        </div>
+                        <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown"
+                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Filter
+                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                        </button>
+                        <div id="filterDropdown"
+                            class="z-10 hidden w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                            <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Category</h6>
+                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
+                                <li class="flex items-center">
+                                    <input id="apple" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="apple"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Apple
+                                        (56)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="fitbit" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="fitbit"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Fitbit
+                                        (56)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="dell" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="dell"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Dell
+                                        (56)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="asus" type="checkbox" value="" checked=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="asus"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Asus
+                                        (97)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="logitech" type="checkbox" value="" checked=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="logitech"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Logitech
+                                        (97)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="msi" type="checkbox" value="" checked=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="msi"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">MSI
+                                        (97)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="bosch" type="checkbox" value="" checked=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="bosch"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Bosch
+                                        (176)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="sony" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="sony"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Sony
+                                        (234)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="samsung" type="checkbox" value="" checked=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="samsung"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Samsung
+                                        (76)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="canon" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="canon"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Canon
+                                        (49)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="microsoft" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="microsoft"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft
+                                        (45)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="razor" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="razor"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor
+                                        (49)</label>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-4 py-4">ID</th>
+                            <th scope="col" class="px-4 py-3">Nombre</th>
+                            <th scope="col" class="px-4 py-3">Descripcion</th>
+                            <th scope="col" class="px-4 py-3">Categoria</th>
+                            <th scope="col" class="px-4 py-3">Duracion (minutos)</th>
+                            <th scope="col" class="px-4 py-3">Precio</th>
+                            <th scope="col" class="px-4 py-3">Imagen</th>
+                            <th scope="col" class="px-4 py-3">
+                                <span class="sr-only">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (isset($servicios) && $servicios->count() > 0)
+                            @foreach ($servicios as $servicio)
+                                <tr class="border-b dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $servicio->id }}
+                                    </th>
+                                    <td class="px-4 py-3">
+                                        {{ $servicio->nombre_servicio }}
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        {{ $servicio->descripcion }}
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        {{ $servicio->categoria }}
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        {{ $servicio->duracion_minutos }}
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        {{ $servicio->precio }}
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        @if ($servicio->imagen)
+                                            <img src="{{ asset('storage/' . $servicio->imagen) }}"
+                                                class="w-16 h-16 object-cover rounded" alt="Imagen servicio">
+                                        @else
+                                            <span class="text-gray-400">Sin imagen</span>
+                                        @endif
+                                    </td>
+                                    <td class="px-4 py-3 flex items-center justify-end">
+                                        <button id="servicio-{{ $servicio->id }}-dropdown-button"
+                                            data-dropdown-toggle="servicio-{{ $servicio->id }}-dropdown"
+                                            class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
+                                            type="button">
+                                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                            </svg>
+                                        </button>
+                                        <div id="servicio-{{ $servicio->id }}-dropdown"
+                                            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                            <ul class="py-1 text-sm"
+                                                aria-labelledby="servicio-{{ $servicio->id }}-dropdown-button">
+                                                <li>
+                                                    <a href="{{ route('servicios.edit', $servicio->id) }}"
+                                                        class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
+                                                        <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"
+                                                            viewbox="0 0 20 20" fill="currentColor"
+                                                            aria-hidden="true">
+                                                            <path
+                                                                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                                                        </svg>
+                                                        Editar
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('servicios.show', $servicio->id) }}"
+                                                        class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
+                                                        <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"
+                                  s                          viewbox="0 0 20 20" fill="currentColor"
+                                                            aria-hidden="true">
+                                                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                        </svg>
+                                                        Ver
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <form action="{{ route('servicios.destroy', $servicio->id) }}"
+                                                        method="POST" class="w-full">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            onclick="return confirm('¿Estás seguro de eliminar este servicio?')"
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
+                                                            <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                aria-hidden="true">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    fill="currentColor"
+                                                                    d="M6.09922 0.300781C5.93212 0.30087 5.76835 0.347476 5.62625 0.435378C5.48414 0.523281 5.36931 0.649009 5.29462 0.798481L4.64302 2.10078H1.59922C1.36052 2.10078 1.13161 2.1956 0.962823 2.36439C0.79404 2.53317 0.699219 2.76209 0.699219 3.00078C0.699219 3.23948 0.79404 3.46839 0.962823 3.63718C1.13161 3.80596 1.36052 3.90078 1.59922 3.90078V12.9008C1.59922 13.3782 1.78886 13.836 2.12643 14.1736C2.46399 14.5111 2.92183 14.7008 3.39922 14.7008H10.5992C11.0766 14.7008 11.5344 14.5111 11.872 14.1736C12.2096 13.836 12.3992 13.3782 12.3992 12.9008V3.90078C12.6379 3.90078 12.8668 3.80596 13.0356 3.63718C13.2044 3.46839 13.2992 3.23948 13.2992 3.00078C13.2992 2.76209 13.2044 2.53317 13.0356 2.36439C12.8668 2.1956 12.6379 2.10078 12.3992 2.10078H9.35542L8.70382 0.798481C8.62913 0.649009 8.5143 0.523281 8.37219 0.435378C8.23009 0.347476 8.06631 0.30087 7.89922 0.300781H6.09922ZM4.29922 5.70078C4.29922 5.46209 4.39404 5.23317 4.56282 5.06439C4.73161 4.8956 4.96052 4.80078 5.19922 4.80078C5.43791 4.80078 5.66683 4.8956 5.83561 5.06439C6.0044 5.23317 6.09922 5.46209 6.09922 5.70078V11.1008C6.09922 11.3395 6.0044 11.5684 5.83561 11.7372C5.66683 11.906 5.43791 12.0008 5.19922 12.0008C4.96052 12.0008 4.73161 11.906 4.56282 11.7372C4.39404 11.5684 4.29922 11.3395 4.29922 11.1008V5.70078ZM8.79922 4.80078C8.56052 4.80078 8.33161 4.8956 8.16282 5.06439C7.99404 5.23317 7.89922 5.46209 7.89922 5.70078V11.1008C7.89922 11.3395 7.99404 11.5684 8.16282 11.7372C8.33161 11.906 8.56052 12.0008 8.79922 12.0008C9.03791 12.0008 9.26683 11.906 9.43561 11.7372C9.6044 11.5684 9.69922 11.3395 9.69922 11.1008V5.70078C9.69922 5.46209 9.6044 5.23317 9.43561 5.06439C9.26683 4.8956 9.03791 4.80078 8.79922 4.80078Z" />
+                                                            </svg>
+                                                            Eliminar
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="6" class="px-4 py-8 text-center text-gray-500 dark:text-gray-400">
+                                    No hay servicios registradas.
+                                </td>
+                            </tr>
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+            {{-- <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
+                    aria-label="Table navigation">
+                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                        Showing
+                        <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                        of
+                        <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                    </span>
+                    <ul class="inline-flex items-stretch -space-x-px">
+                        <li>
+                            <a href="#"
+                                class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <span class="sr-only">Previous</span>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-current="page"
+                                class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <span class="sr-only">Next</span>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                       d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>  --}}
         </div>
-    </section>
- <script>
-    var swiper_thumbs = new Swiper(".nav-for-slider", {
-      loop: true,
-      spaceBetween: 30,
-      slidesPerView: 5,
-    });
-    var swiper = new Swiper(".main-slide-carousel", {
-      slidesPerView: 1,
-      thumbs: {
-        swiper: swiper_thumbs,
-      },
-    });
-  </script>
-                                            
+    </div>
+</section>
+<!-- End block -->
+<!-- Create modal -->
+<div id="createProductModal" tabindex="-1" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+            <!-- Modal header -->
+            <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Agregar servicio</h3>
+                <button type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-target="createProductModal" data-modal-toggle="createProductModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form action="#">
+                <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                    <div>
+                        <label for="name"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                        <input type="text" name="name" id="name"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Type product name" required="">
+                    </div>
+                    <div>
+                        <label for="brand"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
+                        <input type="text" name="brand" id="brand"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Product brand" required="">
+                    </div>
+                    <div>
+                        <label for="price"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                        <input type="number" name="price" id="price"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="$2999" required="">
+                    </div>
+                    <div><label for="category"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label><select
+                            id="category"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option selected="">Select category</option>
+                            <option value="TV">TV/Monitors</option>
+                            <option value="PC">PC</option>
+                            <option value="GA">Gaming/Console</option>
+                            <option value="PH">Phones</option>
+                        </select></div>
+                    <div class="sm:col-span-2"><label for="description"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                        <textarea id="description" rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Write product description here"></textarea>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                    <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewbox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Registrar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Update modal -->
+<div id="updateProductModal" tabindex="-1" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+            <!-- Modal header -->
+            <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Update Product</h3>
+                <button type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-toggle="updateProductModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form action="#">
+                <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                    <div>
+                        <label for="name"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                        <input type="text" name="name" id="name" value="iPad Air Gen 5th Wi-Fi"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Ex. Apple iMac 27&ldquo;">
+                    </div>
+                    <div>
+                        <label for="brand"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
+                        <input type="text" name="brand" id="brand" value="Google"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Ex. Apple">
+                    </div>
+                    <div>
+                        <label for="price"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                        <input type="number" value="399" name="price" id="price"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="$299">
+                    </div>
+                    <div><label for="category"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label><select
+                            id="category"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option selected="">Electronics</option>
+                            <option value="TV">TV/Monitors</option>
+                            <option value="PC">PC</option>
+                            <option value="GA">Gaming/Console</option>
+                            <option value="PH">Phones</option>
+                        </select></div>
+                    <div class="sm:col-span-2"><label for="description"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                        <textarea id="description" rows="5"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Write a description...">Standard glass, 3.8GHz 8-core 10th-generation Intel Core i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6 memory, 256GB SSD storage, Gigabit Ethernet, Magic Mouse 2, Magic Keyboard - US</textarea>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button type="submit"
+                        class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Update
+                        product</button>
+                    <button type="button"
+                        class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                        <svg class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Read modal -->
+<div id="readProductModal" tabindex="-1" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+            <!-- Modal header -->
+            <div class="flex justify-between mb-4 rounded-t sm:mb-5">
+                <div class="text-lg text-gray-900 md:text-xl dark:text-white">
+                    <h3 class="font-semibold ">Apple iMac 27”</h3>
+                    <p class="font-bold">$2999</p>
+                </div>
+                <div>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 inline-flex dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="readProductModal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+            </div>
+            <dl>
+                <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Details</dt>
+                <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Standard glass ,3.8GHz 8-core
+                    10th-generation Intel Core i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz DDR4 memory, Radeon
+                    Pro 5500 XT with 8GB of GDDR6 memory, 256GB SSD storage, Gigabit Ethernet, Magic Mouse 2, Magic
+                    Keyboard - US.</dd>
+                <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Category</dt>
+                <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Electronics/PC</dd>
+            </dl>
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <button type="button"
+                        class="text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        <svg aria-hidden="true" class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                            <path fill-rule="evenodd"
+                                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Edit
+                    </button>
+                    <button type="button"
+                        class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Preview</button>
+                </div>
+                <button type="button"
+                    class="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
+                    <svg aria-hidden="true" class="w-5 h-5 mr-1.5 -ml-1" fill="currentColor" viewbox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete modal -->
+<div id="deleteModal" tabindex="-1" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+            <button type="button"
+                class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-toggle="deleteModal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <svg class="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true"
+                fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                    clip-rule="evenodd" />
+            </svg>
+            <p class="mb-4 text-gray-500 dark:text-gray-300">Are you sure you want to delete this item?</p>
+            <div class="flex justify-center items-center space-x-4">
+                <button data-modal-toggle="deleteModal" type="button"
+                    class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
+                    cancel</button>
+                <button type="submit"
+                    class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">Yes,
+                    I'm sure</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section('contenido')

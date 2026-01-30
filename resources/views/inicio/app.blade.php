@@ -37,7 +37,7 @@
                             aria-current="page">Inicio</a>
                     </li>
                     <li>
-                        <a href="/sucursales/registro"
+                        <a href="/sucursales/listado"
                             class="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
                             aria-current="page">Sucursales</a>
                     </li>
@@ -76,7 +76,7 @@
                             class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Citas</a>
                     </li>
                     <li>
-                        <a href="/clientes/registro"
+                        <a href="/clientes/listado"
                             class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Clientes</a>
                     </li>
                     <li>
@@ -84,7 +84,7 @@
                             class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Transacciones</a>
                     </li>
                     <li>
-                        <a href="/admins/registro"
+                        <a href="/admins/listado"
                             class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Administradores</a>
                     </li>
                 </ul>
