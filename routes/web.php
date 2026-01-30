@@ -52,15 +52,17 @@ Route::put('/sucursales/{sucursal}', [SucursalesController::class, 'update'])->n
 Route::get('/sucursales/{sucursal}', [SucursalesController::class, 'show'])->name('sucursales.show');
 Route::delete('/sucursales/{sucursal}', [SucursalesController::class, 'destroy'])->name('sucursales.destroy');
 
-/*RUTAS SERVICIOS
-Route::get('/servicios/listado', [ServiciosController::class, 'listar'])->name('servicios.listado');
-Route::get('/servicios', [ServiciosController::class, 'index'])->name('servicios.index');
+//RUTAS SERVICIOS
+Route::get('/servicios/listado', [ServiciosController::class, 'index']);
+Route::get('/servicios/registro', [ServiciosController::class, 'create']);
+Route::post('/servicios/store', [ServiciosController::class, 'store']);
+
 Route::get('/servicios/create', [ServiciosController::class, 'create'])->name('servicios.create');
 Route::post('/servicios', [ServiciosController::class, 'store'])->name('servicios.store');
 Route::get('/servicios/{servicio}/edit', [ServiciosController::class, 'edit'])->name('servicios.edit');
 Route::put('/servicios/{servicio}', [ServiciosController::class, 'update'])->name('servicios.update');
 Route::get('/servicios/{servicio}', [ServiciosController::class, 'show'])->name('servicios.show');
-Route::delete('/servicios/{servicio}', [ServiciosController::class, 'destroy'])->name('servicios.destroy');*/
+Route::delete('/servicios/{servicio}', [ServiciosController::class, 'destroy'])->name('servicios.destroy');
 
 /*RUTAS CLIENTES
 Route::get('/clientes/listado', [ClientesController::class, 'listar'])->name('clientes.listado');
