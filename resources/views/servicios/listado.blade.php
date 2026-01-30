@@ -180,9 +180,9 @@
                         <tr>
                             <th scope="col" class="px-4 py-4">ID</th>
                             <th scope="col" class="px-4 py-3">Nombre</th>
-                            <th scope="col" class="px-4 py-3">Descripcion</th>
-                            <th scope="col" class="px-4 py-3">Categoria</th>
-                            <th scope="col" class="px-4 py-3">Duracion (minutos)</th>
+                            <th scope="col" class="px-4 py-3">Descripción</th>
+                            <th scope="col" class="px-4 py-3">Categoría</th>
+                            <th scope="col" class="px-4 py-3">Duración (minutos)</th>
                             <th scope="col" class="px-4 py-3">Precio</th>
                             <th scope="col" class="px-4 py-3">Imagen</th>
                             <th scope="col" class="px-4 py-3">
