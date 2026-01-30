@@ -8,7 +8,8 @@
     <section class="bg-white dark:bg-gray-900 mt-10">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Registrar sucursal</h2>
-            <form action="#">
+            <form action="/sucursales/store" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
                     <div class="sm:col-span-2">

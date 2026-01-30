@@ -43,10 +43,10 @@ Route::view('/admins/listado', '/administradores/listado');
 
 //RUTAS SUCURSALES
 
-Route::get('/sucursales/listado', [SucursalesController::class, 'index'])->name('sucursales.index');
-Route::get('/sucursales/registro', [SucursalesController::class, 'create'])->name('sucursales.create');
+Route::get('/sucursales/listado', [SucursalesController::class, 'index']);
+Route::get('/sucursales/registro', [SucursalesController::class, 'create']);
+Route::post('/sucursales/store', [SucursalesController::class, 'store']);
 
-Route::post('/sucursales', [SucursalesController::class, 'store'])->name('sucursales.store');
 Route::get('/sucursales/{sucursal}/edit', [SucursalesController::class, 'edit'])->name('sucursales.edit');
 Route::put('/sucursales/{sucursal}', [SucursalesController::class, 'update'])->name('sucursales.update');
 Route::get('/sucursales/{sucursal}', [SucursalesController::class, 'show'])->name('sucursales.show');
