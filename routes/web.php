@@ -26,8 +26,8 @@ Route::view('/inicio', '/inicio/app');
 Route::view('/clientes/registro', '/clientes/formulario-crear');
 Route::view('/clientes/listado', '/clientes/listado');
 //sucursales
-Route::view('/sucursales/registro', '/sucursales/formulario-crear');
-Route::view('/sucursales/listado', '/sucursales/listado');
+//Route::view('/sucursales/registro', '/sucursales/formulario-crear');
+//Route::view('/sucursales/listado', '/sucursales/listado');
 //servicios
 Route::view('/servicios/registro', '/servicios/formulario-crear');
 Route::view('/servicios/listado', '/servicios/listado');
@@ -41,16 +41,16 @@ Route::view('/pagos/listado', '/pagos/listado');
 Route::view('/admins/registro', '/administradores/formulario-crear');
 Route::view('/admins/listado', '/administradores/listado');
 
-/*RUTAS SUCURSALES
-Route::get('/sucursales/listado' , [SucursalesController::class,'listado']);
-Route::get('/sucursales', [SucursalesController::class, 'index'])->name('sucursales.index');
-Route::get('/sucursales/listado', [SucursalesController::class, 'listado'])->name('sucursales.listado');
-Route::get('/sucursales/create', [SucursalesController::class, 'create'])->name('sucursales.create');
+//RUTAS SUCURSALES
+
+Route::get('/sucursales/listado', [SucursalesController::class, 'index'])->name('sucursales.index');
+Route::get('/sucursales/registro', [SucursalesController::class, 'create'])->name('sucursales.create');
+
 Route::post('/sucursales', [SucursalesController::class, 'store'])->name('sucursales.store');
 Route::get('/sucursales/{sucursal}/edit', [SucursalesController::class, 'edit'])->name('sucursales.edit');
 Route::put('/sucursales/{sucursal}', [SucursalesController::class, 'update'])->name('sucursales.update');
 Route::get('/sucursales/{sucursal}', [SucursalesController::class, 'show'])->name('sucursales.show');
-Route::delete('/sucursales/{sucursal}', [SucursalesController::class, 'destroy'])->name('sucursales.destroy');*/
+Route::delete('/sucursales/{sucursal}', [SucursalesController::class, 'destroy'])->name('sucursales.destroy');
 
 /*RUTAS SERVICIOS
 Route::get('/servicios/listado', [ServiciosController::class, 'listar'])->name('servicios.listado');

@@ -14,4 +14,9 @@ class ServiciosController extends Controller
         return view('servicios.listado', compact('servicios'));
         //return $servicios;
     }
+
+    public function create() {
+        //
+        return view('servicios.formulario-crear');
+    }
 }

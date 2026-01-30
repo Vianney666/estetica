@@ -7,10 +7,16 @@ use App\Models\Sucursales;
 
 class SucursalesController extends Controller
 {
-    public function listado()
+    public function index()
     {
         $sucursales = Sucursales::all();
         //return $sucursales;
         return view('sucursales.listado', compact('sucursales'));
     }
+
+    public function create()
+    {
+        return view('sucursales.formulario-crear');
+    }
+
 }
