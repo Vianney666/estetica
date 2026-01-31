@@ -38,8 +38,8 @@ Route::view('/citas/listado', '/citas/listado');
 Route::view('/pagos/registro', '/pagos/formulario-crear');
 Route::view('/pagos/listado', '/pagos/listado');
 //administradores
-Route::view('/admins/registro', '/administradores/formulario-crear');
-Route::view('/admins/listado', '/administradores/listado');
+//Route::view('/admins/registro', '/administradores/formulario-crear');
+//Route::view('/admins/listado', '/administradores/listado');
 
 //RUTAS SUCURSALES
 
@@ -73,14 +73,14 @@ Route::put('/clientes/{cliente}', [ClientesController   ::class, 'update'])->nam
 Route::get('/clientes/{cliente}', [ClientesController::class, 'show'])->name('clientes.show');
 Route::delete('/clientes/{cliente}', [ClientesController::class, 'destroy'])->name('clientes.destroy');*/
 
-/*RUTAS ADMINISTRADORES
-Route::get('/admins/listado', [AdministradoresController::class, 'listar'])->name('admins.listado');
-Route::get('/admins', [AdministradoresController::class, 'index'])->name('admins.index');
-Route::get('/admins/create', [AdministradoresController::class, 'create'])->name('admins.create');
-Route::post('/admins', [AdministradoresController::class, 'store'])->name('admins.store');
+//RUTAS ADMINISTRADORES
+Route::get('/admins/listado', [AdministradoresController::class, 'index']);
+Route::get('/admins/registro', [AdministradoresController::class, 'create']);
+Route::post('/admins/store', [AdministradoresController::class, 'store']);
+
 Route::get('/admins/{admin}/edit', [AdministradoresController::class, 'edit'])->name('admins.edit');
 Route::put('/admins/{admin}', [AdministradoresController::class, 'update'])->name('admins.update');
 Route::get('/admins/{admin}', [AdministradoresController::class, 'show'])->name('admins.show');
-Route::delete('/admins/{admin}', [AdministradoresController::class, 'destroy'])->name('admins.destroy');*/
+Route::delete('/admins/{admin}', [AdministradoresController::class, 'destroy'])->name('admins.destroy');
 
 
