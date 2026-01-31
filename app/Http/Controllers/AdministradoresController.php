@@ -26,7 +26,7 @@ class AdministradoresController extends Controller
 
         $admin->nombre = $req->nombre;
         $admin->apellidos = $req->apellidos;
-        $admin->ecorreo = $req->correo;
+        $admin->correo = $req->correo;
         $admin->contrasena = $req->contrasena;
         $admin->imagen = $req->imagen;
         $admin->rol = $req->rol;

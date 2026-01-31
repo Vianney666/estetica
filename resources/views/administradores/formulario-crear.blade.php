@@ -21,7 +21,7 @@
                     <div class="w-full">
                         <label for="brand"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido(s)</label>
-                        <input type="text" name="apellido" id="apellido" required
+                        <input type="text" name="apellidos" id="apellidos" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Apellido(s)" required="">
                     </div>
@@ -49,7 +49,7 @@
                     <div>
                         <label for="category"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rol</label>
-                        <select id="categoria" name="categoria" required
+                        <select id="rol" name="rol" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option selected="">Seleccionar</option>
                             <option value="Administrador">Administrador</option>
