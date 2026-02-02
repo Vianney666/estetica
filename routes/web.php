@@ -41,6 +41,9 @@ Route::view('/pagos/listado', '/pagos/listado');
 //Route::view('/admins/registro', '/administradores/formulario-crear');
 //Route::view('/admins/listado', '/administradores/listado');
 
+
+Route::view('bienvenido', '/inicio/inicio');
+
 //RUTAS SUCURSALES
 
 Route::get('/sucursales/listado', [SucursalesController::class, 'index']);
