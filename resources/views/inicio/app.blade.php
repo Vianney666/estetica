@@ -38,6 +38,10 @@
                         <a href="/bienvenido"
                             class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Inicio</a>
                     </li>
+                    <li>
+                        <a href="/mapa"
+                            class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Mapa</a>
+                    </li>
                     {{-- dropdown Sucursales --}}
                     <li class="relative">
                         <button id="dropdownSucursalesButton" data-dropdown-toggle="dropdownSucursales"
@@ -212,8 +216,9 @@
         </div>
     </nav>
 
-
-    @yield('contenido')
+    <div>
+        @yield('contenido')
+    </div>
 
     {{-- footer --}}
     <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">

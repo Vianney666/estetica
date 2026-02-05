@@ -1,6 +1,6 @@
 @extends('/inicio/app')
 
-@section('titulp', 'Iniciar Sesión')
+@section('titulo', 'Iniciar Sesión')
 
 @section('contenido')
 
@@ -12,7 +12,7 @@
                 <h2 class="text-2xl font-bold text-white mb-2">Bienvenido</h2>
                 <p class="text-slate-400 mb-6">
                     ¿No tienes una cuenta?
-                    <a href="#" class="text-blue-500 hover:underline">Regístrate.</a>
+                    <a href="/registro" class="text-blue-500 hover:underline">Regístrate.</a>
                 </p>
 
                 <form class="space-y-4">

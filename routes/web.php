@@ -5,6 +5,7 @@ use App\Http\Controllers\AdministradoresController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SucursalesController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\RegistrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +42,14 @@ Route::view('/pagos/listado', '/pagos/listado');
 //Route::view('/admins/registro', '/administradores/formulario-crear');
 //Route::view('/admins/listado', '/administradores/listado');
 
+//MAPA
+Route::view('/mapa', '/mapa/mapa');
 
+//LOGIN, REGISTRO
 Route::view('bienvenido', '/inicio/inicio');
 Route::view('/login', '/iniciodesesion/sesion');
+Route::get('/registro', [RegistrosController::class, 'create']);
+Route::post('/registro/store', [RegistrosController::class, 'store']);    
 
 //RUTAS SUCURSALES
 
