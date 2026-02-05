@@ -43,6 +43,7 @@ Route::view('/pagos/listado', '/pagos/listado');
 
 
 Route::view('bienvenido', '/inicio/inicio');
+Route::view('/login', '/iniciodesesion/sesion');
 
 //RUTAS SUCURSALES
 
