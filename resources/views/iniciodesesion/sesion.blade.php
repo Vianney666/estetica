@@ -57,7 +57,7 @@
                 </form>
             </div>
 
-            <!-- Imagen (opcional) -->
+            
             <div class="hidden md:flex items-center justify-center">
                 <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
                     class="max-w-md">
