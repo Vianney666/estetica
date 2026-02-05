@@ -55,4 +55,13 @@ class ServiciosController extends Controller
 
         return redirect('/servicios/listado');
     }
+
+    public function destroy($id)
+    {
+        $servicio = Servicios::find($id);
+
+        $servicio->delete();
+
+        return redirect('/servicios/listado')->with('hecho', 'Servicio eliminado');
+    }
 }

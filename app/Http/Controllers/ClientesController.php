@@ -14,5 +14,7 @@ class ClientesController extends Controller
         return view('clientes.listado', compact('clientes'));
         
     }
+
+    
     
 }

@@ -52,4 +52,13 @@ class SucursalesController extends Controller
         return redirect('/sucursales/listado');
     }
 
+    public function destroy($id)
+    {
+        $sucursal = Sucursales::find($id);
+
+        $sucursal->delete();
+
+        return redirect('/sucursales/listado')->with('hecho', 'Sucursal eliminada');
+    }
+
 }

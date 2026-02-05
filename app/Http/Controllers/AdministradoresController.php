@@ -14,7 +14,7 @@ class AdministradoresController extends Controller
         //return $usuarios;
         return view('administradores.listado', compact('admins'));
     }
-   
+
     public function create()
     {
         return view('administradores.formulario-crear');
@@ -59,4 +59,15 @@ class AdministradoresController extends Controller
 
         return redirect('/admins/listado');
     }
+
+    public function destroy($id)
+    {
+        $admin = Administradores::find($id);
+
+        $admin->delete();
+
+        return redirect('/admins/listado')->with('hecho', 'Administrador eliminado');
+    }
+
+    
 }
