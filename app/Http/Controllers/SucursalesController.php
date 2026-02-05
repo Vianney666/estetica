@@ -32,4 +32,24 @@ class SucursalesController extends Controller
         return redirect('/sucursales/listado');
     }
 
+    public function edit($id)
+    {
+        $sucursales = Sucursales::find($id);
+        return view('sucursales.formulario-editar')->with('sucursales', $sucursales);
+    }
+
+    public function update(Request $req, $id)
+    {
+        $sucursal = Sucursales::find($id);
+
+        $sucursal->direccion = $req->direccion;
+        $sucursal->longitud = $req->longitud;
+        $sucursal->latitud = $req->latitud;
+        $sucursal->imagen = $req->image;
+
+        $sucursal->save(); //insert into
+
+        return redirect('/sucursales/listado');
+    }
+
 }

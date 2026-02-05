@@ -33,4 +33,26 @@ class ServiciosController extends Controller
 
         return redirect('/servicios/listado');
     }
+
+    public function edit($id)
+    {
+        $servicios = Servicios::find($id);
+        return view('servicios.formulario-editar')->with('servicios', $servicios);
+    }
+
+    public function update(Request $req, $id)
+    {
+        $servicio = Servicios::find($id);
+
+        $servicio->nombre_servicio = $req->nombre_servicio;
+        $servicio->descripcion = $req->descripcion;
+        $servicio->categoria = $req->categoria;
+        $servicio->duracion_minutos = $req->duracion_minutos;
+        $servicio->precio = $req->precio;
+        $servicio->imagen = $req->imagen;
+
+        $servicio->save(); //insert into
+
+        return redirect('/servicios/listado');
+    }
 }

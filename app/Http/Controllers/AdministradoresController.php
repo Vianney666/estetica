@@ -36,4 +36,27 @@ class AdministradoresController extends Controller
 
         return redirect('/admins/listado');
     }
+
+    public function edit($id)
+    {
+        $administradores = Administradores::find($id);
+        return view('administradores.formulario-editar')->with('administradores', $administradores);
+    }
+
+    public function update(Request $req, $id)
+    {
+        $admin = Administradores::find($id);
+
+        $admin->nombre = $req->nombre;
+        $admin->apellidos = $req->apellidos;
+        $admin->correo = $req->correo;
+        $admin->contrasena = $req->contrasena;
+        $admin->imagen = $req->imagen;
+        $admin->rol = $req->rol;
+        $admin->estado = $req->estado;
+
+        $admin->save(); //insert into
+
+        return redirect('/admins/listado');
+    }
 }

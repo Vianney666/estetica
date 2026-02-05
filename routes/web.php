@@ -49,6 +49,8 @@ Route::view('bienvenido', '/inicio/inicio');
 Route::get('/sucursales/listado', [SucursalesController::class, 'index']);
 Route::get('/sucursales/registro', [SucursalesController::class, 'create']);
 Route::post('/sucursales/store', [SucursalesController::class, 'store']);
+Route::get('/sucursales/{id}/editar', [SucursalesController::class, 'edit']);
+Route::post('/sucursales/{id}/actualizar', [SucursalesController::class, 'update']);
 
 Route::get('/sucursales/{sucursal}/edit', [SucursalesController::class, 'edit'])->name('sucursales.edit');
 Route::put('/sucursales/{sucursal}', [SucursalesController::class, 'update'])->name('sucursales.update');
@@ -59,6 +61,8 @@ Route::delete('/sucursales/{sucursal}', [SucursalesController::class, 'destroy']
 Route::get('/servicios/listado', [ServiciosController::class, 'index']);
 Route::get('/servicios/registro', [ServiciosController::class, 'create']);
 Route::post('/servicios/store', [ServiciosController::class, 'store']);
+Route::get('/servicios/{id}/editar', [ServiciosController::class, 'edit']);
+Route::post('/servicios/{id}/actualizar', [ServiciosController::class, 'update']);
 
 //Route::get('/servicios/create', [ServiciosController::class, 'create'])->name('servicios.create');
 Route::get('/servicios/{servicio}/edit', [ServiciosController::class, 'edit'])->name('servicios.edit');
@@ -80,6 +84,8 @@ Route::delete('/clientes/{cliente}', [ClientesController::class, 'destroy'])->na
 Route::get('/admins/listado', [AdministradoresController::class, 'index']);
 Route::get('/admins/registro', [AdministradoresController::class, 'create']);
 Route::post('/admins/store', [AdministradoresController::class, 'store']);
+Route::get('/admins/{id}/editar', [AdministradoresController::class, 'edit']);
+Route::post('/admins/{id}/actualizar', [AdministradoresController::class, 'update']);
 
 Route::get('/admins/{admin}/edit', [AdministradoresController::class, 'edit'])->name('admins.edit');
 Route::put('/admins/{admin}', [AdministradoresController::class, 'update'])->name('admins.update');
