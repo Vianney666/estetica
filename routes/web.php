@@ -6,6 +6,7 @@ use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SucursalesController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\RegistrosController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,11 +62,6 @@ Route::post('/sucursales/{id}/actualizar', [SucursalesController::class, 'update
 Route::delete('/sucursales/{id}', [SucursalesController::class, 'destroy'])->name('sucursales.destroy');
 
 
-
-
-
-
-
 //RUTAS SERVICIOS
 Route::get('/servicios/listado', [ServiciosController::class, 'index']);
 Route::get('/servicios/registro', [ServiciosController::class, 'create']);
@@ -102,5 +98,13 @@ Route::delete('/admins/{id}', [AdministradoresController::class, 'destroy'])->na
 Route::put('/admins/{admin}', [AdministradoresController::class, 'update'])->name('admins.update');
 Route::get('/admins/{admin}', [AdministradoresController::class, 'show'])->name('admins.show');
 
-
-
+//login facebook
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])
+->name('auth.redirect');
+ 
+Route::get('/auth/callback', [AuthController::class, 'callback'])
+->name('auth.callback');
+ 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth')->name('dashboard');

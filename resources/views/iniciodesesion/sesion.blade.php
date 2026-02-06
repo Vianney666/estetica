@@ -30,17 +30,17 @@
 
                     <div class="flex items-center my-4">
                         <hr class="flex-grow border-slate-600">
-                        <span class="px-3 text-slate-400 text-sm">ó</span>
+                        <span class="px-3 text-slate-400 text-sm">o</span>
                         <hr class="flex-grow border-slate-600">
                     </div>
 
-                    <button type="button"
+                    <a href="{{ route('auth.redirect') }}"
                         class="w-full flex items-center justify-center gap-2 border border-slate-600 text-white rounded-lg py-2 hover:bg-slate-700">
-                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Feis" class="w-5 h-5">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" class="w-5 h-5">
                         Inicia sesión con Facebook
-                    </button>
+                    </a>
 
-                    
+
 
                     <div class="flex justify-between items-center text-sm">
                         <label class="flex items-center gap-2 text-slate-400">
@@ -57,7 +57,7 @@
                 </form>
             </div>
 
-            
+
             <div class="hidden md:flex items-center justify-center">
                 <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
                     class="max-w-md">
