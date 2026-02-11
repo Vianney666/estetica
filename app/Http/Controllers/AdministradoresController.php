@@ -28,11 +28,20 @@ class AdministradoresController extends Controller
         $admin->apellidos = $req->apellidos;
         $admin->correo = $req->correo;
         $admin->contrasena = $req->contrasena;
-        $admin->imagen = $req->imagen;
+        $admin->imagen = '/imagenes/administradores/administrador_default.jpg'; //$req->imagen;
         $admin->rol = $req->rol;
         $admin->estado = $req->estado;
 
         $admin->save(); //insert into
+
+        if ($req->has('imagen')) {
+            $imagen = $req->imagen;
+            $nuevo_nombre = 'administrador_'.$admin->id.'.jpg';
+            $ruta = $imagen->storeAs('imagenes/administradores' ,$nuevo_nombre,'public');
+            $admin->$imagen = $ruta;
+            $admin->save();
+
+        }
 
         return redirect('/admins/listado');
     }
