@@ -38,7 +38,7 @@ class AdministradoresController extends Controller
             $imagen = $req->imagen;
             $nuevo_nombre = 'administrador_'.$admin->id.'.jpg';
             $ruta = $imagen->storeAs('imagenes/administradores' ,$nuevo_nombre,'public');
-            $admin->$imagen = $ruta;
+            $admin->imagen = '/storage/'.$ruta;
             $admin->save();
 
         }

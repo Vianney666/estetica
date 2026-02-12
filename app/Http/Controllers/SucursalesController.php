@@ -29,6 +29,15 @@ class SucursalesController extends Controller
 
         $sucursal->save(); //insert into
 
+        if ($req->has('imagen')) {
+            $imagen = $req->imagen;
+            $nuevo_nombre = 'sucursal_'.$sucursal->id.'.jpg';
+            $ruta = $imagen->storeAs('imagenes/sucursales' ,$nuevo_nombre,'public');
+            $sucursal->imagen = '/storage/'.$ruta;
+            $sucursal->save();
+
+        }
+
         return redirect('/sucursales/listado');
     }
 

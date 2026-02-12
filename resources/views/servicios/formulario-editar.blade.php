@@ -12,7 +12,8 @@
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
                     <div class="sm:col-span-2">
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                        <label for="name"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
                         <input type="text" name="nombre_servicio" id="nombre_servicio" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Nombre del servicio" required value="{{ $servicios->nombre_servicio }}">
@@ -20,7 +21,7 @@
                     <div class="sm:col-span-2">
                         <label for="description"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
-                        <textarea type="text" name="descripcion" id="descripcion" required rows="8" 
+                        <textarea type="text" name="descripcion" id="descripcion" required rows="8"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Descripción del servicio">{{ $servicios->descripcion }}</textarea>
                     </div>
@@ -29,9 +30,10 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoría</label>
                         <select id="categoria" name="categoria" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            
+
                             <option value="Dama" {{ $servicios->categoria == 'Dama' ? 'selected' : '' }}>Dama</option>
-                            <option value="Caballero" {{ $servicios->categoria == 'Caballero' ? 'selected' : '' }}>Caballero</option>
+                            <option value="Caballero" {{ $servicios->categoria == 'Caballero' ? 'selected' : '' }}>Caballero
+                            </option>
                             <option value="Niños" {{ $servicios->categoria == 'Niños' ? 'selected' : '' }}>Niños</option>
                         </select>
                     </div>
@@ -54,6 +56,21 @@
                             Subir archivos
                         </label>
 
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Imágenes actuales:</p>
+
+                            <div class="flex flex-wrap gap-2">
+                                @php
+                                    $imagenes = explode(',', $servicios->imagen);
+                                @endphp
+
+                                @foreach ($imagenes as $imagen)
+                                    <img src="{{ asset(trim($imagen)) }}" alt="Imagen del servicio"
+                                        class="w-32 h-32 object-cover rounded-lg border-2 border-gray-300 dark:border-gray-600 shadow-md">
+                                @endforeach
+                            </div>
+                        </div>
+
                         <div class="flex items-center justify-center w-full">
                             <label for="dropzone-file"
                                 class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 dark:hover:bg-gray-800">
@@ -65,13 +82,13 @@
                                             d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                     </svg>
                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                                        <span class="font-semibold">Click para subir</span> o arrastra imagen
+                                        <span class="font-semibold">Click para actualizar</span> o arrastra imagen
                                     </p>
                                     <p class="text-xs text-gray-500 dark:text-gray-400">
                                         PNG, JPG (Max. 10MB)
                                     </p>
                                 </div>
-                                <input id="imagen" name="imagen" type="file" class="hidden" accept="image/*" /> //es aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                                <input id="imagen" name="imagen" type="file" class="hidden" accept="image/*" />
                             </label>
                         </div>
 
@@ -107,7 +124,7 @@
                 </div>
                 <button type="submit"
                     class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-purple-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                    Guardar
+                    Actualizar
                 </button>
             </form>
         </div>

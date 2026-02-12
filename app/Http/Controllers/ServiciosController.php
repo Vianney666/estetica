@@ -7,7 +7,7 @@ use App\Models\Servicios;
 
 class ServiciosController extends Controller
 {
-    public function index() 
+    public function index()
     {
         $servicios = Servicios::all();
         return view('servicios.listado', compact('servicios'));
@@ -31,6 +31,21 @@ class ServiciosController extends Controller
 
         $servicio->save(); //insert into
 
+        if ($req->has('imagenes')) {
+            $imagenes = $req->file('imagenes');
+            $rutas = [];
+
+            foreach ($imagenes as $index => $imagen) {
+                $nuevo_nombre = 'servicio_' . $servicio->id . '_' . $index . '.jpg';
+                $ruta = $imagen->storeAs('imagenes/servicios', $nuevo_nombre, 'public');
+                $rutas[] = '/storage/' . $ruta;
+            }
+
+
+            $servicio->imagen = implode(',', $rutas);
+            $servicio->save();
+        }
+
         return redirect('/servicios/listado');
     }
 
@@ -49,9 +64,11 @@ class ServiciosController extends Controller
         $servicio->categoria = $req->categoria;
         $servicio->duracion_minutos = $req->duracion_minutos;
         $servicio->precio = $req->precio;
-        $servicio->imagen = $req->imagen;
+        $servicio->imagen = '/imagenes/servicios/servicio_default.jpg';
 
         $servicio->save(); //insert into
+
+
 
         return redirect('/servicios/listado');
     }

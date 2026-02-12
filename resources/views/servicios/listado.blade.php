@@ -214,8 +214,13 @@
                                         {{ $servicio->precio }}
                                     </td>
                                     <td class="px-4 py-3">
-                                        @if ($servicio->imagen)
-                                            <img src="{{ asset('storage/' . $servicio->imagen) }}"
+                                        @php
+                                            $imagenes = explode(',', $servicio->imagen);
+                                            $primeraImagen = trim($imagenes[0]);
+                                        @endphp
+
+                                        @if ($primeraImagen && $primeraImagen != '/imagenes/servicios/servicio_default.jpg')
+                                            <img src="{{ asset($primeraImagen) }}"
                                                 class="w-16 h-16 object-cover rounded" alt="Imagen servicio">
                                         @else
                                             <span class="text-gray-400">Sin imagen</span>
@@ -253,8 +258,8 @@
                                                 <li>
                                                     <a href="{{ route('servicios.show', $servicio->id) }}"
                                                         class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
-                                                        <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"
-                                  s                          viewbox="0 0 20 20" fill="currentColor"
+                                                        <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" s
+                                                            viewbox="0 0 20 20" fill="currentColor"
                                                             aria-hidden="true">
                                                             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                                                             <path fill-rule="evenodd" clip-rule="evenodd"
