@@ -14,23 +14,26 @@
                     <div class="w-full">
                         <label for="brand"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre(s)</label>
-                        <input type="text" name="nombre" id="nombre" required
+                        <input type="text" name="nombre" id="nombre" required value="{{ old('nombre') }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Nombre(s)" required="">
                     </div>
                     <div class="w-full">
                         <label for="brand"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido(s)</label>
-                        <input type="text" name="apellidos" id="apellidos" required
+                        <input type="text" name="apellidos" id="apellidos" required value="{{ old('apellidos') }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Apellido(s)" required="">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo
                             electrónico</label>
-                        <input type="email" name="correo" id="correo" required
+                        <input type="email" name="correo" id="correo" required value="{{ old('correo') }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="ejemplo@ejemplo.com" required="">
+                        @error('correo')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="w-full">
                         <label for="brand"
@@ -38,6 +41,9 @@
                         <input type="password" name="contrasena" id="contrasena" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Contraseña" required="">
+                        @error('contrasena')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="w-full">
                         <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirmar
@@ -45,6 +51,9 @@
                         <input type="password" name="confirmar_contrasena" id="confirmar_contrasena"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Confirmar contraseña" required="">
+                        @error('confirmar_contrasena')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="category"
@@ -52,8 +61,9 @@
                         <select id="rol" name="rol" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option selected="">Seleccionar</option>
-                            <option value="Administrador">Administrador</option>
-                            <option value="Empleado">Empleado</option>
+                            <option value="Administrador" {{ old('rol') == 'Administrador' ? 'selected' : '' }}>
+                                Administrador</option>
+                            <option value="Empleado" {{ old('rol') == 'Empleado' ? 'selected' : '' }}>Empleado</option>
                         </select>
                     </div>
                     <div>
@@ -62,11 +72,11 @@
                         <select id="estado" name="estado" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option selected="">Seleccionar</option>
-                            <option value="Activo">Activo</option>
-                            <option value="Inactivo">Inactivo</option>
+                            <option value="1" {{ old('estado') == 1 ? 'selected' : '' }}>Activo</option>
+                            <option value="0" {{ old('estado') == 0 ? 'selected' : '' }}>Inactivo</option>
                         </select>
                     </div>
- 
+
                     <div class="sm:col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Subir archivos
@@ -89,7 +99,8 @@
                                         PNG, JPG (Max. 10MB)
                                     </p>
                                 </div>
-                                <input id="imagen" name="imagen" type="file" class="hidden" accept="image/jpg, image/jpeg, image/png" required />
+                                <input id="imagen" name="imagen" type="file" class="hidden"
+                                    accept="image/jpg, image/jpeg, image/png" required />
                             </label>
                         </div>
 
@@ -97,20 +108,20 @@
                         <div id="file-list" class="mt-4 space-y-2 hidden">
 
                         </div>
-                </div>
+                    </div>
 
-                <script>
-                    document.getElementById('imagen').addEventListener('change', function(e) {
-                        const fileList = document.getElementById('file-list');
-                        fileList.innerHTML = '';
-                        fileList.classList.remove('hidden');
+                    <script>
+                        document.getElementById('imagen').addEventListener('change', function(e) {
+                            const fileList = document.getElementById('file-list');
+                            fileList.innerHTML = '';
+                            fileList.classList.remove('hidden');
 
-                        Array.from(e.target.files).forEach((file, index) => {
-                            const fileElement = document.createElement('div');
-                            fileElement.className =
-                                'flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-800 rounded-lg';
-                            fileElement.innerHTML =
-                                `
+                            Array.from(e.target.files).forEach((file, index) => {
+                                const fileElement = document.createElement('div');
+                                fileElement.className =
+                                    'flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-800 rounded-lg';
+                                fileElement.innerHTML =
+                                    `
                             <div class="flex items-center space-x-3">
                              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
@@ -118,16 +129,16 @@
                                  <span class="text-sm text-gray-700 dark:text-gray-300 truncate">${file.name}</span>
                             </div>
                              <span class="text-xs text-gray-500 dark:text-gray-400">${(file.size / 1024 / 1024).toFixed(2)} MB</span>`;
-                            fileList.appendChild(fileElement);
+                                fileList.appendChild(fileElement);
+                            });
                         });
-                    });
-                </script>
-        </div>
-        <button type="submit"
-            class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-purple-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-            Guardar
-        </button>
-        </form>
+                    </script>
+                </div>
+                <button type="submit"
+                    class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-purple-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                    Guardar
+                </button>
+            </form>
         </div>
     </section>
 

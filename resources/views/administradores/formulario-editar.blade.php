@@ -38,6 +38,9 @@
                         <input type="password" name="contrasena" id="contrasena" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Contraseña" required value="{{ $administradores->contrasena }}">
+                        @error('contrasena')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="w-full">
                         <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirmar
@@ -45,6 +48,9 @@
                         <input type="password" name="confirmar_contrasena" id="confirmar_contrasena"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Confirmar contraseña" required value="{{ $administradores->contrasena }}">
+                        @error('confirmar_contrasena')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="category"
@@ -64,9 +70,9 @@
                         <select id="estado" name="estado" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
 
-                            <option value="Activo" {{ $administradores->estado == 'Activo' ? 'selected' : '' }}>Activo
+                            <option value="1" {{ $administradores->estado == '1' ? 'selected' : '' }}>Activo
                             </option>
-                            <option value="Inactivo" {{ $administradores->estado == 'Inactivo' ? 'selected' : '' }}>Inactivo
+                            <option value="0" {{ $administradores->estado == '0' ? 'selected' : '' }}>Inactivo
                             </option>
                         </select>
                     </div>
@@ -76,14 +82,14 @@
                             Imagen del administrador
                         </label>
 
-                        
+
                         <div class="mb-4">
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Imagen actual:</p>
                             <img src="{{ asset($administradores->imagen) }}" alt="Imagen del administrador"
                                 class="w-32 h-32 object-cover rounded-lg border-2 border-gray-300 dark:border-gray-600 shadow-md">
                         </div>
 
-                       
+
                         <div class="flex items-center justify-center w-full">
                             <label for="imagen"
                                 class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 dark:hover:bg-gray-800">
@@ -106,7 +112,7 @@
                             </label>
                         </div>
 
-                        
+
                         <div id="file-list" class="mt-4 space-y-2 hidden"></div>
                     </div>
 

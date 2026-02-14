@@ -12,6 +12,10 @@
 <body class="bg-[#BDE0FE]">
     {{-- contenido dinamico --}}
 
+    @php
+        $currentRoute = request()->route()->getName();
+        $isLoginPage = $currentRoute === 'login';
+    @endphp
 
     <nav class="bg-[#FFAFCC] fixed w-full z-20 top-0 start-0 border-[#CDB4DB]">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -21,6 +25,8 @@
                     belleza
                     C&V</span>
             </a>
+
+
             <button data-collapse-toggle="navbar-dropdown" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-[#1A202C] rounded-base md:hidden
                 hover:bg-[#CDB4DB] hover:text-heading focus:outline-none focus:ring-2 focus:ring-[#A2D2FF]"
@@ -31,188 +37,198 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
                 </svg>
             </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-                <ul
-                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-[#CDB4DB] rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-                    <li>
-                        <a href="/bienvenido"
-                            class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="/mapa"
-                            class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Mapa</a>
-                    </li>
-                    {{-- dropdown Sucursales --}}
-                    <li class="relative">
-                        <button id="dropdownSucursalesButton" data-dropdown-toggle="dropdownSucursales"
-                            data-dropdown-placement="bottom"
-                            class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto
+
+
+            @if (!$isLoginPage)
+                <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                    <ul
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-[#CDB4DB] rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                        <li>
+                            <a href="/bienvenido"
+                                class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="/mapa"
+                                class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Mapa</a>
+                        </li>
+                        {{-- dropdown Sucursales --}}
+                        <li class="relative">
+                            <button id="dropdownSucursalesButton" data-dropdown-toggle="dropdownSucursales"
+                                data-dropdown-placement="bottom"
+                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto
                             hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                            Sucursales
-                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 9-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownSucursales"
-                            class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownSucursalesButton">
-                                <li>
-                                    <a href="/sucursales/registro"
-                                        class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="/sucursales/listado"
-                                        class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Listado</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    {{-- Dropdown Servicios --}}
-                    <li class="relative">
-                        <button id="dropdownServiciosButton" data-dropdown-toggle="dropdownServicios"
-                            data-dropdown-placement="bottom"
-                            class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto hover:bg-[#CDB4DB] 
+                                Sucursales
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownSucursales"
+                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                <ul class="p-2 text-sm text-body font-medium"
+                                    aria-labelledby="dropdownSucursalesButton">
+                                    <li>
+                                        <a href="/sucursales/registro"
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Registro</a>
+                                    </li>
+                                    <li>
+                                        <a href="/sucursales/listado"
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Listado</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{-- Dropdown Servicios --}}
+                        <li class="relative">
+                            <button id="dropdownServiciosButton" data-dropdown-toggle="dropdownServicios"
+                                data-dropdown-placement="bottom"
+                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto hover:bg-[#CDB4DB] 
                             md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                            Servicios
-                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 9-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownServicios"
-                            class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownServiciosButton">
-                                <li>
-                                    <a href="/servicios/registro"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="/servicios/listado"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    {{-- Dropdown citas --}}
-                    <li class="relative">
-                        <button id="dropdownCitasButton" data-dropdown-toggle="dropdownCitas"
-                            data-dropdown-placement="bottom"
-                            class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
+                                Servicios
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownServicios"
+                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownServiciosButton">
+                                    <li>
+                                        <a href="/servicios/registro"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                    </li>
+                                    <li>
+                                        <a href="/servicios/listado"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{-- Dropdown citas --}}
+                        <li class="relative">
+                            <button id="dropdownCitasButton" data-dropdown-toggle="dropdownCitas"
+                                data-dropdown-placement="bottom"
+                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
                             hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                            Citas
-                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 9-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownCitas"
-                            class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownCitasButton">
-                                <li>
-                                    <a href="/citas/registro"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="/citas/listado"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    {{-- CLIENTES --}}
-                    <li class="relative">
-                        <button id="dropdownClientesButton" data-dropdown-toggle="dropdownClientes"
-                            data-dropdown-placement="bottom"
-                            class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
+                                Citas
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownCitas"
+                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownCitasButton">
+                                    <li>
+                                        <a href="/citas/registro"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                    </li>
+                                    <li>
+                                        <a href="/citas/listado"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{-- CLIENTES --}}
+                        <li class="relative">
+                            <button id="dropdownClientesButton" data-dropdown-toggle="dropdownClientes"
+                                data-dropdown-placement="bottom"
+                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
                             hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                            Clientes
-                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 9-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownClientes"
-                            class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownClientesButton">
-                                <li>
-                                    <a href="/clientes/registro"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="/clientes/listado"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    {{-- PAGOS --}}
-                    <li class="relative">
-                        <button id="dropdownPagosButton" data-dropdown-toggle="dropdownPagos"
-                            data-dropdown-placement="bottom"
-                            class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
+                                Clientes
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownClientes"
+                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                <ul class="p-2 text-sm text-body font-medium"
+                                    aria-labelledby="dropdownClientesButton">
+                                    <li>
+                                        <a href="/clientes/registro"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                    </li>
+                                    <li>
+                                        <a href="/clientes/listado"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{-- PAGOS --}}
+                        <li class="relative">
+                            <button id="dropdownPagosButton" data-dropdown-toggle="dropdownPagos"
+                                data-dropdown-placement="bottom"
+                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
                             hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                            Pagos
-                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 9-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownPagos"
-                            class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                            <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownPagosButton">
-                                <li>
-                                    <a href="/pagos/registro"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="/pagos/listado"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    {{-- ADMINISTRADORES --}}
-                    <li class="relative">
-                        <button id="dropdownAdministradoresButton" data-dropdown-toggle="dropdownAdministradores"
-                            data-dropdown-placement="bottom"
-                            class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
+                                Pagos
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownPagos"
+                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownPagosButton">
+                                    <li>
+                                        <a href="/pagos/registro"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pagos/listado"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{-- ADMINISTRADORES --}}
+                        <li class="relative">
+                            <button id="dropdownAdministradoresButton" data-dropdown-toggle="dropdownAdministradores"
+                                data-dropdown-placement="bottom"
+                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
                             hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                            Administradores
-                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 9-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownAdministradores"
-                            class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                            <ul class="p-2 text-sm text-body font-medium"
-                                aria-labelledby="dropdownAdministradoresButton">
-                                <li>
-                                    <a href="/admins/registro"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                </li>
-                                <li>
-                                    <a href="/admins/listado"
-                                        class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                                Administradores
+                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownAdministradores"
+                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                <ul class="p-2 text-sm text-body font-medium"
+                                    aria-labelledby="dropdownAdministradoresButton">
+                                    <li>
+                                        <a href="/admins/registro"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admins/listado"
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">Cerrar Sesión</button>
+                        </form>
+                    </ul>
+                </div>
+            @endif
         </div>
     </nav>
 
