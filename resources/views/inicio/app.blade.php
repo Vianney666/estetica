@@ -69,10 +69,12 @@
                                 class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
                                 <ul class="p-2 text-sm text-body font-medium"
                                     aria-labelledby="dropdownSucursalesButton">
-                                    <li>
-                                        <a href="/sucursales/registro"
-                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Registro</a>
-                                    </li>
+                                    @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
+                                        <li>
+                                            <a href="/sucursales/registro"
+                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Registro</a>
+                                        </li>
+                                    @endif
                                     <li>
                                         <a href="/sucursales/listado"
                                             class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Listado</a>
@@ -97,13 +99,15 @@
                             <div id="dropdownServicios"
                                 class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
                                 <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownServiciosButton">
-                                    <li>
-                                        <a href="/servicios/registro"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                    </li>
+                                    @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
+                                        <li>
+                                            <a href="/servicios/registro"
+                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                        </li>
+                                    @endif
                                     <li>
                                         <a href="/servicios/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
                                     </li>
                                 </ul>
                             </div>
@@ -129,10 +133,12 @@
                                         <a href="/citas/registro"
                                             class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
                                     </li>
+
                                     <li>
                                         <a href="/citas/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
                                     </li>
+
                                 </ul>
                             </div>
                         </li>
@@ -160,7 +166,7 @@
                                     </li>
                                     <li>
                                         <a href="/clientes/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
                                     </li>
                                 </ul>
                             </div>
@@ -182,46 +188,50 @@
                             <div id="dropdownPagos"
                                 class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
                                 <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownPagosButton">
-                                    <li>
-                                        <a href="/pagos/registro"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                    </li>
+                                    @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
+                                        <li>
+                                            <a href="/pagos/registro"
+                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                        </li>
+                                    @endif
                                     <li>
                                         <a href="/pagos/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
+                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         {{-- ADMINISTRADORES --}}
-                        <li class="relative">
-                            <button id="dropdownAdministradoresButton" data-dropdown-toggle="dropdownAdministradores"
-                                data-dropdown-placement="bottom"
-                                class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
+                        @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
+                            <li class="relative">
+                                <button id="dropdownAdministradoresButton"
+                                    data-dropdown-toggle="dropdownAdministradores" data-dropdown-placement="bottom"
+                                    class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
                             hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
-                                Administradores
-                                <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m19 9-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownAdministradores"
-                                class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-                                <ul class="p-2 text-sm text-body font-medium"
-                                    aria-labelledby="dropdownAdministradoresButton">
-                                    <li>
-                                        <a href="/admins/registro"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admins/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listar</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                                    Administradores
+                                    <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m19 9-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownAdministradores"
+                                    class="z-10 absolute hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+                                    <ul class="p-2 text-sm text-body font-medium"
+                                        aria-labelledby="dropdownAdministradoresButton">
+                                        <li>
+                                            <a href="/admins/registro"
+                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                        </li>
+                                        <li>
+                                            <a href="/admins/listado"
+                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit">Cerrar Sesión</button>

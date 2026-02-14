@@ -36,4 +36,14 @@ class Administradores extends Authenticatable
     {
         return $this->correo;
     }
+
+    public function esMaster()
+    {
+        return $this->rol === 'Administrador';
+    }
+
+    public function esBase()
+    {
+        return $this->rol === 'Empleado';
+    }
 }

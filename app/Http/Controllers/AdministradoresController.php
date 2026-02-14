@@ -46,6 +46,7 @@ class AdministradoresController extends Controller
         $admin->contrasena = Hash::make($req->contrasena); //este es para encriptar la contraseña
         $admin->imagen = '/imagenes/administradores/administrador_default.jpg'; 
         $admin->estado = $req->estado;
+        $admin->rol = $req->rol;
 
         $admin->save(); //insert into
 
