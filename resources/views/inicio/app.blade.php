@@ -72,12 +72,12 @@
                                     @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
                                         <li>
                                             <a href="/sucursales/registro"
-                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Registro</a>
+                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Registro</a>
                                         </li>
                                     @endif
                                     <li>
                                         <a href="/sucursales/listado"
-                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded">Listado</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Listado</a>
                                     </li>
                                 </ul>
                             </div>
@@ -102,12 +102,12 @@
                                     @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
                                         <li>
                                             <a href="/servicios/registro"
-                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Registro</a>
                                         </li>
                                     @endif
                                     <li>
                                         <a href="/servicios/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Listado</a>
                                     </li>
                                 </ul>
                             </div>
@@ -131,12 +131,12 @@
                                 <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownCitasButton">
                                     <li>
                                         <a href="/citas/registro"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Registro</a>
                                     </li>
 
                                     <li>
                                         <a href="/citas/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Listado</a>
                                     </li>
 
                                 </ul>
@@ -162,11 +162,11 @@
                                     aria-labelledby="dropdownClientesButton">
                                     <li>
                                         <a href="/clientes/registro"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Registro</a>
                                     </li>
                                     <li>
                                         <a href="/clientes/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Listado</a>
                                     </li>
                                 </ul>
                             </div>
@@ -191,12 +191,12 @@
                                     @if (Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
                                         <li>
                                             <a href="/pagos/registro"
-                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Registro</a>
                                         </li>
                                     @endif
                                     <li>
                                         <a href="/pagos/listado"
-                                            class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
+                                            class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Listado</a>
                                     </li>
                                 </ul>
                             </div>
@@ -207,7 +207,7 @@
                                 <button id="dropdownAdministradoresButton"
                                     data-dropdown-toggle="dropdownAdministradores" data-dropdown-placement="bottom"
                                     class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto 
-                            hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">
+                            hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0 transition-colors duration-300">
                                     Administradores
                                     <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -222,11 +222,11 @@
                                         aria-labelledby="dropdownAdministradoresButton">
                                         <li>
                                             <a href="/admins/registro"
-                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Registro</a>
+                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Registro</a>
                                         </li>
                                         <li>
                                             <a href="/admins/listado"
-                                                class="block w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Listado</a>
+                                                class="block w-full p-2 hover:bg-[#CDB4DB] hover:text-heading rounded transition-colors duration-300">Listado</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -234,7 +234,15 @@
                         @endif
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit">Cerrar Sesión</button>
+                            <button type="submit"
+                                class="inline-flex items-center gap-2 text-heading hover:text-red-600 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                                <span>Cerrar Sesión</span>
+                            </button>
                         </form>
                     </ul>
                 </div>
