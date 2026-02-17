@@ -42,7 +42,7 @@
             @if (!$isLoginPage)
                 <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                     <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-[#CDB4DB] rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-[#CDB4DB] rounded-lg bg-white md:space-x-4 md:flex-row md:mt-0 md:border-0 md:bg-transparent md:items-center">
                         <li>
                             <a href="/bienvenido"
                                 class="block py-2 px-3 text-[#1A202C] font-semibold rounded hover:bg-[#CDB4DB] md:hover:bg-transparent md:border-0 md:hover:text-[#A2D2FF] md:p-0">Inicio</a>
@@ -244,6 +244,38 @@
                                 <span>Cerrar Sesión</span>
                             </button>
                         </form>
+
+                        {{-- foto del empleado logueado --}}
+                        @auth('admin')
+                            <li class="relative md:ml-0 md:pl-0">
+                                <button type="button"
+                                    class="flex text-sm rounded-full focus:ring-4 focus:ring-[#A2D2FF] hover:ring-2 hover:ring-[#CDB4DB] transition-all"
+                                    id="admin_foto" data-dropdown-toggle="admin_informacion"
+                                    data-dropdown-placement="bottom">
+                                    <img class="w-10 h-10 rounded-full object-cover border-2 border-[#CDB4DB]"
+                                        src="{{ Auth::guard('admin')->user()->imagen ?? '/imagenes/administradores/administrador_default.jpg' }}"
+                                        alt="Avatar">
+                                </button>
+
+                                {{-- datos de usuario --}}
+                                <div id="admin_informacion"
+                                    class="z-50 hidden bg-white border border-gray-200 rounded-lg shadow-lg w-56">
+                                    <div class="px-4 py-3 text-sm">
+                                        <span class="block font-semibold text-gray-900">
+                                            {{ Auth::guard('admin')->user()->nombre }}
+                                            {{ Auth::guard('admin')->user()->apellidos }}
+                                        </span>
+                                        <span class="block text-gray-500 truncate text-xs mt-1">
+                                            {{ Auth::guard('admin')->user()->correo }}
+                                        </span>
+                                        <span
+                                            class="inline-block mt-2 px-2 py-1 text-xs font-medium rounded-full {{ Auth::guard('admin')->user()->esMaster() ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800' }}">
+                                            {{ Auth::guard('admin')->user()->rol }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        @endauth
                     </ul>
                 </div>
             @endif

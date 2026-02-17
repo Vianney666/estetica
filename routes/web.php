@@ -6,21 +6,22 @@ use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SucursalesController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\RegistrosController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\Administradores; 
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-// ========== RUTAS PROTEGIDAS (requieren autenticación) ==========
+// Rutas protegidas
 Route::middleware(['auth:admin'])->group(function () {
 
     // Dashboard
     Route::get('/bienvenido', function () {
-        return view('inicio.inicio'); // o tu vista de bienvenida
+        return view('inicio.inicio'); 
     })->name('bienvenido');
 
-    //MAPA
     Route::view('/mapa', '/mapa/mapa');
 
     //RUTAS SUCURSALES
@@ -98,13 +99,40 @@ Route::view('/pagos/listado', '/pagos/listado');
 
 
 
-//login facebook
-Route::get('/auth/redirect', [AuthController::class, 'redirect'])
-    ->name('auth.redirect');
+//login google
+Route::get('/auth/google', function () {
+    return Socialite::driver('google')->redirect();
+})->name('google.login');
 
-Route::get('/auth/callback', [AuthController::class, 'callback'])
-    ->name('auth.callback');
+Route::get('/auth/google/callback', function () {
+    try{
+        $googleUser = Socialite::driver('google')->user();
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+        //busca si el usuario ya existe en la BD
+        $admin = Administradores::where('correo', $googleUser->getEmail())->first();
+
+        //sino existe, se crea
+        if (!$admin) {
+            $admin = Administradores::create([
+                'nombre' => $googleUser->getName(),
+                'apellidos' => '',
+                'correo' => $googleUser->getEmail(),
+                'contrasena' => Hash::make(uniqid()), //genera una constraseña aleatoria 
+                'imagen' => $googleUser->getAvatar(),
+                'estado' => 1, //estado activo por defecto
+                'rol' => 'Empleado', //rol por defecto
+            ]);
+        }
+
+        if ($admin->estado == 1) {
+            Auth::guard('admin')->login($admin);
+            return redirect('/bienvenido');
+        } else {
+            return redirect('/login')->withErrors(['error' => 'Cuenta inactiva. Consulta con un administrador.']);
+        }
+
+    } catch (Exception $e) {
+        return redirect('/login')->withErrors(['error' => 'Error al iniciar sesión con Google']);
+    }
+})->name('google.callback');
+

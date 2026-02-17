@@ -29,12 +29,8 @@
                     @csrf
                     <div>
                         <label class="block mb-1 text-sm text-white">Correo</label>
-                        <input 
-                        type="email"
-                        name="email"
-                        value="{{ old('email') }}" 
-                        required 
-                        class="w-full rounded-lg bg-slate-700 border border-slate-600 text-white p-2.5">
+                        <input type="email" name="email" value="{{ old('email') }}" required
+                            class="w-full rounded-lg bg-slate-700 border border-slate-600 text-white p-2.5">
                     </div>
 
                     <div>
@@ -49,10 +45,16 @@
                         <hr class="flex-grow border-slate-600">
                     </div>
 
-                    <a href="{{ route('auth.redirect') }}"
+                    {{-- <a href="{{ route('auth.redirect') }}"
                         class="w-full flex items-center justify-center gap-2 border border-slate-600 text-white rounded-lg py-2 hover:bg-slate-700">
                         <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" class="w-5 h-5">
                         Inicia sesión con Facebook
+                    </a> --}}
+
+                    <a href="{{ url('/auth/google') }}"
+                        class="w-full flex items-center justify-center gap-2 border border-slate-600 text-white rounded-lg py-2 hover:bg-slate-700">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                        Inicia sesión con Google
                     </a>
 
                     <button type="submit"

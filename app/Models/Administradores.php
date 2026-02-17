@@ -10,7 +10,7 @@ class Administradores extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'Administradores';
+    protected $table = 'administradores';
     
     public $timestamps = false;
 
