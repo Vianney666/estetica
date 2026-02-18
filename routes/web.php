@@ -106,7 +106,7 @@ Route::get('/auth/google', function () {
 
 Route::get('/auth/google/callback', function () {
     try{
-        $googleUser = Socialite::driver('google')->user();
+        $googleUser = Socialite::driver('google')->stateless()->user();
 
         //busca si el usuario ya existe en la BD
         $admin = Administradores::where('correo', $googleUser->getEmail())->first();
@@ -131,8 +131,8 @@ Route::get('/auth/google/callback', function () {
             return redirect('/login')->withErrors(['error' => 'Cuenta inactiva. Consulta con un administrador.']);
         }
 
-    } catch (Exception $e) {
-        return redirect('/login')->withErrors(['error' => 'Error al iniciar sesión con Google']);
+    } catch (\Throwable $e) {
+        return redirect('/login')->withErrors(['error' => 'Error al iniciar sesión con Google: ' . $e->getMessage()]);
     }
 })->name('google.callback');
 
