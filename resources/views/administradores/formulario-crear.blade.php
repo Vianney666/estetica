@@ -100,7 +100,7 @@
                                     </p>
                                 </div>
                                 <input id="imagen" name="imagen" type="file" class="hidden"
-                                    accept="image/jpg, image/jpeg, image/png" required />
+                                    accept="image/jpg, image/jpeg, image/png"  />
                             </label>
                         </div>
 
