@@ -192,6 +192,6 @@
         </div>
     </div>
 </section>
-3
+
 
 @section('contenido')
